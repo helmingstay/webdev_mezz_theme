@@ -16,7 +16,12 @@
 {% endifinstalled %}
 
 {% compress css %}
-<link rel="stylesheet" href="{% static "css/00cerulean.boostrap.min.css" %}">
+{% if request.get_host == "christian.x14n.org"%}
+    <link rel="stylesheet" href="{% static "css/00darkly.boostrap.min.css" %}">
+{% else %}
+    <link rel="stylesheet" href="{% static "css/00cerulean.boostrap.min.css" %}">
+{% endif %}
+
 <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
 <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
 {% if LANGUAGE_BIDI %}

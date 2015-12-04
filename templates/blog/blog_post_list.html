@@ -94,7 +94,7 @@
     {% endfor %}
     {% endif %}
     {% endwith %}
-    {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
+    on {{request.get_host}} {{blog_post.publish_date|date:"j F Y"}}
 </h6>
 {% endeditable %}
 {% endblock %}
